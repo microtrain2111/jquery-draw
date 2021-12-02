@@ -7,30 +7,6 @@ var concat = require('gulp-concat');
 var merge = require('merge-stream');
 var scss = require('gulp-sass');
 
-function version(){
-  var now = new Date(),
-    Y = now.getFullYear(),
-    m = now.getMonth()+1,
-    d = now.getDate(),
-    H = now.getHours(),
-    i = now.getMinutes(),
-    s = now.getSeconds();
-
-    if(H < 10) {
-        H = '0' + H;
-    }
-
-    if(i < 10) {
-        i = '0' + i;
-    }
-
-    if(s < 10) {
-        s = '0' + s;
-    }
-
-    return String(10000*Y + 100*m + d + '.' + H + i + s);
-}
-
 gulp.task('default', ['watch']);
 
 gulp.task('build-css', function(){
